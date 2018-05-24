@@ -7,48 +7,48 @@ class LiftTest extends TestCase {
   public function testCanBeMoveButStopWithoutOverload() {
     $currentFloor = 1;
     $gotoFloor = 1;
-
     $lift = new Lift();
     $lift->setCurrentFloor($currentFloor);
     $lift->setWeight(100);
 
     $actual = $lift->Move($gotoFloor);
+
     $this->assertEquals("stop", $actual);
   }
 
   public function testCanBeMoveToUpWithoutOverload() {
     $currentFloor = 1;
     $gotoFloor = 2;
-
     $lift = new Lift();
     $lift->setCurrentFloor($currentFloor);
     $lift->setWeight(100);
 
     $actual = $lift->Move($gotoFloor);
+
     $this->assertEquals("up", $actual);
   }
 
   public function testCanBeMoveToDownWithoutOverload() {
     $currentFloor = 2;
     $gotoFloor = 1;
-
     $lift = new Lift();
     $lift->setCurrentFloor($currentFloor);
     $lift->setWeight(100);
 
     $actual = $lift->Move($gotoFloor);
+
     $this->assertEquals("down", $actual);
   }
 
   public function testCanBeMoveWithOverload() {
     $currentFloor = 2;
     $gotoFloor = 1;
-
     $lift = new Lift();
     $lift->setCurrentFloor($currentFloor);
     $lift->setWeight(2000);
 
     $actual = $lift->Move($gotoFloor);
+
     $this->assertEquals("stop", $actual);
   }
 
